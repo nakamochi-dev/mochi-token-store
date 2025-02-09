@@ -23,7 +23,7 @@ export const TokenGrid: FC<Props> = ({ category, query, address }) => {
     refetchOnWindowFocus: false,
   });
 
-  const { data: pinnedToken, isLoading: pinnedTokenIsLoading } = api.coingecko.getTokenCardDataById.useQuery({
+  const { data: pinnedToken } = api.coingecko.getTokenCardDataById.useQuery({
     id: 'mochi-thecatcoin',
   }, {
     enabled: !!query,
@@ -128,7 +128,7 @@ export const TokenGrid: FC<Props> = ({ category, query, address }) => {
 
     // return paginated tokens
     return scopedTokens?.slice(indexOfFirstToken, indexOfLastToken);
-  }, [address, indexOfFirstToken, indexOfLastToken, query, searchedTokenAddresses, searchedTokens, tokenAddresses, tokens, pinnedToken]);
+  }, [tokens, pinnedToken, query, address, indexOfFirstToken, indexOfLastToken, tokenAddresses, searchedTokens, searchedTokenAddresses, tokensOwnedByAddress]);
 
 
   const { 

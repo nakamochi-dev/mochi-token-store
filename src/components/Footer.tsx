@@ -66,7 +66,6 @@ export const Footer: FC = () => {
           <Builders className="sm:hidden flex" />
         </div>
       </div>
-      <div style={{ backgroundImage: `url('/images/full-width-text.svg')` }} className={`w-full bg-center bg-no-repeat h-40 absolute -bottom-5 z-10 ${theme === 'dark' ? 'opacity-80' : ''}`} ></div>
     </div>
   )
 };

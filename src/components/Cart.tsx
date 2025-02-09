@@ -8,7 +8,7 @@ import { useCartContext } from '~/contexts/Cart';
 import { api } from '~/utils/api';
 import { useSendCalls, useShowCallsStatus } from 'wagmi/experimental'
 import { client } from '~/providers/Thirdweb';
-import { useActiveAccount, useActiveWallet } from 'thirdweb/react';
+import { useActiveAccount, useActiveWallet, useWalletBalance } from 'thirdweb/react';
 import { DEFAULT_CHAIN } from '~/constants/chain';
 import { Connect } from '~/components/Connect';
 import { parseAbiItem, encodeFunctionData, isAddressEqual } from "viem";
@@ -22,12 +22,23 @@ import { env } from '~/env';
 import { config } from '~/providers/Wagmi';
 import { GAS_FREE_TOKEN } from '~/constants/addresses';
 
+const GAS_FREE_TOKEN_BALANCE_THRESHOLD = 1_000_000n; // 1M gas free tokens
+
 const Cart: FC = () => {
   const { showCallsStatus } = useShowCallsStatus({ config });
   const { sendCalls } = useSendCalls();
   const { cart, referralCode, updateItem, deleteItem } = useCartContext();
   const wallet = useActiveWallet();
   const account = useActiveAccount();
+  const { data: gasFreeTokenBalance } = useWalletBalance({
+    address: account?.address,
+    tokenAddress: GAS_FREE_TOKEN,
+    chain: DEFAULT_CHAIN,
+    client,
+  });
+  const meetsGasFreeTokenBalanceThreshold = useMemo(() => {
+    return gasFreeTokenBalance && gasFreeTokenBalance.value >= GAS_FREE_TOKEN_BALANCE_THRESHOLD;
+  }, [gasFreeTokenBalance]);
   const { data: etherPrice } = api.dex.getEtherPrice.useQuery({
     chainId: base.id,
   });
@@ -140,7 +151,7 @@ const Cart: FC = () => {
           ...(cart.some(item => 
             isAddressEqual(item.address, GAS_FREE_TOKEN) && 
             item.usdAmountDesired >= 10
-          ) ? {
+          ) || meetsGasFreeTokenBalanceThreshold ? {
             paymasterService: {
               url: env.NEXT_PUBLIC_PAYMASTER_URL,
             }

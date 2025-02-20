@@ -28,7 +28,7 @@ const HomePage: FC<WithServerSideProps> = ({ referralNft, category: defaultCateg
   return (
     <>
       <Head>
-        <title>Base Token Store</title>
+        <title>Mochi Token Store</title>
         <meta name="description" content="The easiest way to buy tokens on Base" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -43,7 +43,7 @@ const HomePage: FC<WithServerSideProps> = ({ referralNft, category: defaultCateg
             />
           </div>
           <h1 className="sm:text-7xl text-5xl text-center tracking-tighter font-semibold items-center gap-2 sm:gap-4 flex-wrap sm:pt-8 pt-2 sm:pb-8 pb-4">
-            Base Token Store
+            Mochi Token Store
           </h1>
           <div className="flex justify-center w-full">
             <input 

@@ -27,13 +27,9 @@ export const Footer: FC = () => {
   const Builders: FC<BuildersProps> = ({ className }) => (
     <div className={className}>
       <div className="flex sm:flex-row flex-col items-center gap-4 mt-4">
-        <Link href="https://warpcast.com/myk" className="flex items-center gap-1" target="_blank" rel="noreferrer">
-          <Image src="/images/myk.webp" alt="Myk.eth" className="h-6 w-6 rounded-full" width={24} height={24} />
-          <span className="text-xs">Built by @Myk.eth</span>
-        </Link>
-        <Link href="https://warpcast.com/baseddesigner.eth" className="flex items-center gap-1" target="_blank" rel="noreferrer">
-          <Image src="/images/baseddesigner.png" alt="Based Designer" className="h-6 w-6 rounded-full" width={24} height={24} />
-          <span className="text-xs">Designed by @baseddesigner.eth</span>
+        <Link href="https://x.com/mochi_token" className="flex items-center gap-1" target="_blank" rel="noreferrer">
+          <Image src="https://mochithecatcoin.com/img/logo.png" alt="Mochi" className="h-6 w-6 rounded-full" width={24} height={24} />
+          <span className="text-xs">Part of the MOCHI ecosystem.</span>
         </Link>
       </div>
     </div>

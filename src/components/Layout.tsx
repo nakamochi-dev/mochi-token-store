@@ -36,7 +36,7 @@ export const Layout: FC<LayoutProps> = ({ children }) => {
                 <Advertisement />
               </div>
             )}
-            <div className={`w-full justify-between items-center flex mr-4 ${todaysAdIsNotCensored ? 'mt-9' : 'mt-20'}`}>
+            <div className={`w-full justify-between items-center flex mr-4 ${todaysAdIsNotCensored ? 'mt-9' : 'mt-0'}`}>
               <div className="sm:w-full sm:px-0 w-fit px-2">
                 <ThemeSwitch />
               </div>

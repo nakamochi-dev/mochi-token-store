@@ -55,7 +55,7 @@ const HomePage: FC<WithServerSideProps> = ({ referralNft, category: defaultCateg
             />
           </div>
           <div className="sm:max-w-5xl mx-auto">
-            <div className="flex flex-col gap-2 min-w-full">
+            <div className="flex flex-col gap-2 min-w-full pt-4">
               <div className="flex justify-center gap-4 overflow-x-auto sm:pl-0 pl-12">
                 {categories.map((cat) => (
                   <button 
@@ -68,8 +68,8 @@ const HomePage: FC<WithServerSideProps> = ({ referralNft, category: defaultCateg
                   </button>
                 ))}
               </div>
-              <div className="m-4 mx-0 sm:mx-4">
-                {/* UNCOMMENT THIS TO SHOW THE REFERRAL BANNER
+              {/* <div className="m-4 mx-0 sm:mx-4">
+                UNCOMMENT THIS TO SHOW THE REFERRAL BANNER
                   <RefferedBanner referralNft={referralNft} /> 
                 */}
               </div>

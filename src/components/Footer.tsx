@@ -25,7 +25,7 @@ export const Footer: FC = () => {
 
   type BuildersProps = { className?: string };
   const Builders: FC<BuildersProps> = ({ className }) => (
-    <div className={className}>
+    {/* <div className={className}>
       <div className="flex sm:flex-row flex-col items-center gap-4 mt-4">
         <Link href="https://warpcast.com/myk" className="flex items-center gap-1" target="_blank" rel="noreferrer">
           <Image src="/images/myk.webp" alt="Myk.eth" className="h-6 w-6 rounded-full" width={24} height={24} />
@@ -36,7 +36,7 @@ export const Footer: FC = () => {
           <span className="text-xs">Designed by @baseddesigner.eth</span>
         </Link>
       </div>
-    </div>
+    </div> */}
   );
 
   return (

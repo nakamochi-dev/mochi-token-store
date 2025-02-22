@@ -9,7 +9,7 @@ import ThemeSwitch from "~/components/ThemeSwitch";
 import Advertisement from "~/components/Advertisement/Banner";
 import { useTheme } from "next-themes";
 import Logo from "~/components/Logo";
-import CreditCard from "~/components/CreditCard";
+{/* import CreditCard from "~/components/CreditCard"; */}
 import { useCartContext } from "~/contexts/Cart";
 import { useAdvertisementContext } from "~/contexts/Advertisement";
 import { CENSORED_DAY_IDS } from "~/constants/ads";
@@ -61,7 +61,7 @@ export const Layout: FC<LayoutProps> = ({ children }) => {
                       <Link href={`https://wallet.coinbase.com/assets`} className="btn sm:btn-md btn-sm btn-ghost flex items-center space-x-2" target="_blank" rel="noopener">
                         <WalletIcon className="sm:h-6 sm:w-6 w-4 h-4" />
                       </Link>
-                      <CreditCard />
+                      {/* <CreditCard /> */}
                     </div>
                   )}
                   <div className="indicator">

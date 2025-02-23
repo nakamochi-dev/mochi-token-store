@@ -14,7 +14,7 @@ export const config = createConfig({
     mainnet,
   ],
   connectors: [coinbaseWallet({
-    appName: "Base Token Store",
+    appName: "Mochi Token Store",
     appLogoUrl: "https://avatars.githubusercontent.com/u/108554348?s=200&v=4",
     preference: "smartWalletOnly",
   })],
